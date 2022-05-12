@@ -1,6 +1,6 @@
 # [Blitz Tactics](https://blitztactics.com)
 
-A free and open-source website for playing fast-paced chess puzzles!
+Ad free and open-source website for playing fast-paced chess puzzles!
 
 If you want to play random puzzles each time:
 
