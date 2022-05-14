@@ -8,7 +8,7 @@ gem 'bootsnap', require: false
 gem 'eye', require: false
 
 # persistence
-gem 'pg', '~> 1.0'
+gem 'pg', '~> 1.1.0'
 
 gem 'dotenv-rails'
 gem 'devise', '~> 4.3'
@@ -16,7 +16,7 @@ gem 'slim'
 gem 'glicko2'
 
 gem 'execjs'
-gem 'mini_racer', '~> 0.4.0', platforms: :ruby
+gem 'mini_racer', '~> 0.3.0', platforms: :ruby
 
 # assets
 gem 'sprockets-rails', '~> 3.4'
