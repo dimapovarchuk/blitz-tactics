@@ -78,8 +78,18 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+#production:
+#  <<: *default
+#  database: blitz-tactics_production
+#  username: rails
+#  password: <%= ENV['BLITZ-TACTICS_DATABASE_PASSWORD'] %>
+
+
+  production:
+    url: https://localhost:5432
+#
 production:
   <<: *default
   database: blitz-tactics_production
-  username: rails
-  password: <%= ENV['BLITZ-TACTICS_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: root
