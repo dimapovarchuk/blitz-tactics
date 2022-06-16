@@ -1,0 +1,39 @@
+version: '3'
+services:
+  db:
+    #image: linuxdima/postgres:latest
+    image: postgres
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+    environment:
+#     - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+#     - POSTGRES_DB=db
+
+  webpacker:
+    #image: linuxdima/blitz-tactics_webpacker:latest
+    build: .
+    command: bundle exec bin/yarn dev
+    volumes:
+      - .:/blitz-tactics
+    ports:
+      - "3035:3035"
+
+  web:
+    #image: linuxdima/blitz-tactics_web:latest
+    build: .
+    command: /bin/sh -c "rm -f /blitz-tactics/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/blitz-tactics
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - webpacker
+    environment:
+      - DATABASE_URL=postgres://postgres:secret@db:5432/blitz-tactics_development
+
+volumes:
+  dbdata:
