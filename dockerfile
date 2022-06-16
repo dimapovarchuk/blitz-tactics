@@ -28,7 +28,7 @@ apt-get update && apt-get install -y yarn
 RUN mkdir /blitz-tactics
 WORKDIR /blitz-tactics
 ADD Gemfile /blitz-tactics/Gemfile
-ADD Gemfile.lock /blitz-tactics/Gemfile.lock
+#ADD Gemfile.lock /blitz-tactics/Gemfile.lock
 RUN bundle install && \
 yarn install
 COPY . /blitz-tactics
