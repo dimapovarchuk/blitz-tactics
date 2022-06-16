@@ -21,14 +21,14 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
-development:
-  url: http://localhost:5432
+#development:
+#  url: http://localhost:5432
 
-development:
-  <<: *default
-  database: blitz-tactics_development
-  username: postgres
-  password: root
+#development:
+#  <<: *default
+#  database: blitz-tactics_development
+#  username: postgres
+#  password: root
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -82,17 +82,17 @@ development:
 #
 # You can use this database configuration with:
 #
-# production:
-#  url: http://localhost:5432
+production:
+  url: http:52.233.241.31:5432
 #
 #production:
 #  <<: *default
 #  database: blitz-tactics_production
 #  username: postgres
-#  password: root
+#  password: <%= ENV['BLITZ-TACTICS_DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
   database: blitz-tactics_production
-  username: rails
-  password: <%= ENV['BLITZ-TACTICS_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: root
