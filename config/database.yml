@@ -93,6 +93,6 @@ production:
 
 production:
   <<: *default
-  database: blitz-tactics_production
-  username: postgres
-  password: root
+  database: blitztactics
+  username: blitztactics
+  password: postgres
