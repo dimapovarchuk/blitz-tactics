@@ -13,17 +13,17 @@ services:
 #     - POSTGRES_DB=db
 
   webpacker:
-    #image: linuxdima/blitz-tactics_webpacker:latest
-    build: .
-    command: bundle exec bin/yarn dev
+    image: linuxdima/blitz-tactics_webpacker:latest
+    #build: .
+    command: npm install webpacker -g && bundle exec bin/yarn dev
     volumes:
       - .:/blitz-tactics
     ports:
       - "3035:3035"
 
   web:
-    #image: linuxdima/blitz-tactics_web:latest
-    build: .
+    image: linuxdima/blitz-tactics_web:latest
+    #build: .
     command: /bin/sh -c "rm -f /blitz-tactics/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/blitz-tactics
@@ -34,6 +34,5 @@ services:
       - webpacker
     environment:
       - DATABASE_URL=postgres://postgres:secret@db:5432/blitz-tactics_development
-
 volumes:
   dbdata:
