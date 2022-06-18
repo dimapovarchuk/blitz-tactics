@@ -10,6 +10,6 @@ jobs:
           command: sudo sh /home/ubuntu/update.sh
           host: ${{ secrets.HOST }}
           username: ubuntu
-          privateKey: ${{ secrets.PRIVATE_KEY}}
+          privateKey: ${{ secrets.PRIVATE_KEY }}
         env:
           CI: true
