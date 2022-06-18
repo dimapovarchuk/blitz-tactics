@@ -6,5 +6,6 @@ sudo git clone https://github.com/dimapovarchuk/blitz-tactics.git /home/ubuntu/d
 cd /home/ubuntu/demo3
 sudo cp -rf * /home/ubuntu/blitz-tactics
 sudo rm /home/ubuntu/blitz-tactics/Gemfile.lock
+sudo rm -rf /home/ubuntu/demo3
 cd /home/ubuntu/blitz-tactics
 sudo docker-compose up -d
