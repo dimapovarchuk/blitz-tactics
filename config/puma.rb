@@ -8,7 +8,7 @@ threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 threads threads_count, threads_count
 
 
-bind        ENV.fetch("PUMA_BIND") { "tcp://127.0.0.1:3000" }
+bind        ENV.fetch("PUMA_BIND") { "tcp://127.0.0.1:8080 }
 
 # Specifies the `environment` that Puma will run in.
 #

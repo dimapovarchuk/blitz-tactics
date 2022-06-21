@@ -32,4 +32,4 @@ ADD Gemfile /blitz-tactics/Gemfile
 RUN bundle install && \
 yarn install
 COPY . /blitz-tactics
-EXPOSE  3000
+EXPOSE  8080
