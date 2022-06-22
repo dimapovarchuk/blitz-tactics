@@ -8,9 +8,18 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: sudo sh /home/ubuntu/update.sh
-          host: ${{ secrets.HOST1 }} ${{ secrets.HOST }}
+          host: ${{ secrets.HOST }}
           username: ubuntu
-          privateKey: ${{ secrets.PRIVATE_KEY1 }} ${{ secrets.PRIVATE_KEY }}
+          privateKey: ${{ secrets.PRIVATE_KEY }}
+        env:
+          CI: true
+      - name: Run the upgrade script1
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: sudo sh /home/ubuntu/update.sh
+          host: ${{ secrets.HOST1 }}
+          username: ubuntu
+          privateKey: ${{ secrets.PRIVATE_KEY1 }}
         env:
           CI: true
       
