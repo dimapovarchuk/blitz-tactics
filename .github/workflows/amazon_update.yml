@@ -1,0 +1,15 @@
+name: Update blitztactics
+on: [push, workflow_dispatch]
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run the upgrade script
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: sudo sh /home/ubuntu/update.sh
+          host: ${{ secrets.HOST1 }}
+          username: ubuntu
+          privateKey: ${{ secrets.PRIVATE_KEY1 }}
+        env:
+          CI: true
