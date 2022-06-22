@@ -8,8 +8,9 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: sudo sh /home/ubuntu/update.sh
-          host: ${{ secrets.HOST1 }}
+          host: ${{ secrets.HOST1 }} ${{ secrets.HOST }}
           username: ubuntu
-          privateKey: ${{ secrets.PRIVATE_KEY1 }}
+          privateKey: ${{ secrets.PRIVATE_KEY1 }} ${{ secrets.PRIVATE_KEY }}
         env:
           CI: true
+      
