@@ -33,4 +33,4 @@ RUN bundle install && \
 yarn install && \
 gem update bundle
 COPY . /blitz-tactics
-EXPOSE 8080
+EXPOSE 80

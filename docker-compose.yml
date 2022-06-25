@@ -24,11 +24,11 @@ services:
   web:
     image: linuxdima/blitz-tactics_web:latest
     #build: .
-    command: /bin/sh -c "rm -f /blitz-tactics/tmp/pids/server.pid && bundle exec rails s -p 8080 -b '0.0.0.0'"
+    command: /bin/sh -c "rm -f /blitz-tactics/tmp/pids/server.pid && bundle exec rails s -p 80 -b '0.0.0.0'"
     volumes:
       - .:/blitz-tactics
     ports:
-      - "8080:8080"
+      - "80:80"
     depends_on:
       - db
       - webpacker
