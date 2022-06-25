@@ -30,6 +30,7 @@ WORKDIR /blitz-tactics
 ADD Gemfile /blitz-tactics/Gemfile
 #ADD Gemfile.lock /blitz-tactics/Gemfile.lock
 RUN bundle install && \
-yarn install
+yarn install && \
+gem update bundle
 COPY . /blitz-tactics
-EXPOSE  3000
+EXPOSE 8080
