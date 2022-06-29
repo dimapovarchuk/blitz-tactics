@@ -26,6 +26,41 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
+-- Name: blitz_tactics; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blitz_tactics (
+    id bigint NOT NULL,
+    amount numeric(15,2) DEFAULT 0.0,
+    company character varying,
+    contragent character varying,
+    currency character varying,
+    date date,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: blitz_tactics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.blitz_tactics_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: blitz_tactics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.blitz_tactics_id_seq OWNED BY public.blitz_tactics.id;
+
+
+--
 -- Name: completed_countdown_levels; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1052,6 +1087,13 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
+-- Name: blitz_tactics id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.blitz_tactics ALTER COLUMN id SET DEFAULT nextval('public.blitz_tactics_id_seq'::regclass);
+
+
+--
 -- Name: completed_countdown_levels id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1260,6 +1302,14 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 ALTER TABLE ONLY public.ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: blitz_tactics blitz_tactics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.blitz_tactics
+    ADD CONSTRAINT blitz_tactics_pkey PRIMARY KEY (id);
 
 
 --
@@ -1803,7 +1853,6 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON public.users USING bt
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
-('20160223082005'),
 ('20160313063315'),
 ('20160313063553'),
 ('20160313074604'),
@@ -1824,7 +1873,6 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180625160722'),
 ('20180626024019'),
 ('20180626024026'),
-('20180626052132'),
 ('20181206064113'),
 ('20181206064149'),
 ('20181207065925'),
@@ -1841,6 +1889,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20201207014332'),
 ('20201229001317'),
 ('20210417123507'),
-('20210417123508');
+('20210417123508'),
+('20220629055409');
 
 

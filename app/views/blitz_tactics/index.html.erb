@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Blitz tactics</h1>
+
+<div id="blitz_tactics">
+  <% @blitz_tactics.each do |blitz_tactic| %>
+    <%= render blitz_tactic %>
+    <p>
+      <%= link_to "Show this blitz tactic", blitz_tactic %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New blitz tactic", new_blitz_tactic_path %>

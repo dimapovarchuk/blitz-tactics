@@ -1,0 +1,2 @@
+class BlitzTactic < ApplicationRecord
+end

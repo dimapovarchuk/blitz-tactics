@@ -1,0 +1,2 @@
+module BlitzTacticsHelper
+end

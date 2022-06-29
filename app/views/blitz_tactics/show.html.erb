@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @blitz_tactic %>
+
+<div>
+  <%= link_to "Edit this blitz tactic", edit_blitz_tactic_path(@blitz_tactic) %> |
+  <%= link_to "Back to blitz tactics", blitz_tactics_path %>
+
+  <%= button_to "Destroy this blitz tactic", @blitz_tactic, method: :delete %>
+</div>
