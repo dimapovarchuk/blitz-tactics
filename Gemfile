@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.7.0'
+ruby '2.7.3'
 
 gem 'rails', '~> 7.0'
 gem 'puma', '~> 5.0'
@@ -8,7 +8,7 @@ gem 'bootsnap', require: false
 gem 'eye', require: false
 
 # persistence
-gem 'pg', '~> 1.0'
+gem 'pg', '~> 1.1.0'
 
 gem 'dotenv-rails'
 gem 'devise', '~> 4.3'
@@ -40,5 +40,3 @@ group :test do
   gem 'capybara'
   gem 'capybara-selenium'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
-end
