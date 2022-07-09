@@ -4,7 +4,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Run the upgrade script for azure cloud
+      - name: Run the upgrade script for AZURE CLOUD
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: sudo sh /home/ubuntu/blitz-tactics/update.sh
@@ -13,13 +13,22 @@ jobs:
           privateKey: ${{ secrets.PRIVATE_KEY }}
         env:
           CI: true
-      - name: Run the upgrade script for amazon cloud
+      - name: Run the upgrade script for AMAZON CLOUD
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: sudo sh /home/ubuntu/blitz-tactics/update.sh
           host: ${{ secrets.HOST1 }}
           username: ubuntu
           privateKey: ${{ secrets.PRIVATE_KEY1 }}
+        env:
+          CI: true
+      - name: Run the upgrade script for GOOGLE CLOUD
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: sudo sh /home/ubuntu/blitz-tactics/update.sh
+          host: ${{ secrets.HOST2 }}
+          username: ubuntu
+          privateKey: ${{ secrets.PRIVATE_KEY2 }}
         env:
           CI: true
       
