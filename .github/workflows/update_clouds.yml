@@ -22,13 +22,13 @@ jobs:
           privateKey: ${{ secrets.PRIVATE_KEY1 }}
         env:
           CI: true
-      - name: Run the upgrade script for GOOGLE CLOUD
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: sudo sh /home/ubuntu/blitz-tactics/update.sh
-          host: ${{ secrets.HOST2 }}
-          username: ubuntu
-          privateKey: ${{ secrets.PRIVATE_KEY2 }}
-        env:
-          CI: true
+#       - name: Run the upgrade script for GOOGLE CLOUD
+#         uses: garygrossgarten/github-action-ssh@release
+#         with:
+#           command: sudo sh /home/ubuntu/blitz-tactics/update.sh
+#           host: ${{ secrets.HOST2 }}
+#           username: ubuntu
+#           privateKey: ${{ secrets.PRIVATE_KEY2 }}
+#         env:
+#           CI: true
       
